@@ -1,26 +1,29 @@
 # lxc-buildroot
-LXC buildroot with many branches
+buildroot for LXC/Docker with many tags to support various development environments.
+
+Coming soon: buildroot-buildroot, because why not meta?
 
 ## TAGS
-* `centos-2015.11.x` - `centos:6` and [git branch 2015.11.x]
-* `centos7-2015.11.x` - `centos:7` and [git branch 2015.11.x]
-* `centos-master` - `centos:6` and [git branch master]
-* `centos7-master` - `centos:7` and [git branch master]
-* `ubuntu-2015.11.x` - `ubuntu:15.10` and [git branch 2015.11.x]
-* `ubuntu-master` - `ubuntu:15.10` and [git branch master]
+* buildroot [git branch 2015.11.x]
+  * `centos-2015.11.x` - `centos:6`
+  * `centos7-2015.11.x` - `centos:7`
+  * `slack-2015.11.x` - [vbatts]/`slackware:latest`
+  * `ubuntu15-2015.11.x` - `ubuntu:15.10`
+* buildroot [git branch master]
+  * `centos-master` - `centos:6`
+  * `centos7-master` - `centos:7`
+  * `slack-master` - [vbatts]/`slackware:latest`
+  * `ubuntu15-master` - `ubuntu:15.10`
 
 ## What does it do?
 It provides a docker-managed buildroot environment for people who need things like that. Like me. I don't know. Deal with it.
 
 ## What other projects does it lean on?
-Docker
-buildroot
-CentOS
-Ubuntu
-Slaackware
+buildroot, CentOS, Ubuntu, Slackware
 
 # DOES IT WORK!?
-Not today. Maybe tomorrow. Probably in an hour.
+Yes! If not, give it an hour or so.
 
 [git branch 2015.11.x]:https://git.busybox.net/buildroot/log/?h=2015.11.x
 [git branch master]:https://git.busybox.net/buildroot/log/
+[vbatts]:https://hub.docker.com/r/vbatts/slackware/
