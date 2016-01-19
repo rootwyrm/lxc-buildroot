@@ -21,7 +21,8 @@ LABEL com.rootwyrm.rootcore.synology_compatible="false"
 ENV yuminst="/usr/bin/yum -q -y"
 
 RUN $yuminst install bash bc binutils bzip2 cpio g++ gcc git gzip ncurses-devel ncurses-libs \
-    make mercurial perl-ExtUtils-MakeMaker patch python rsync sed tar unzip wget
+    make mercurial perl-ExtUtils-MakeMaker patch python rsync sed tar unzip wget yum-plugin-security
+RUN $yuminst update-minimal --security -y
     
 RUN locale-gen en_US.utf8
 
