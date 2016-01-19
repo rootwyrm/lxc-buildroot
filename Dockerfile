@@ -20,11 +20,12 @@ LABEL com.rootwyrm.rootcore.synology_compatible="false"
 
 ENV yuminst="/usr/bin/yum -q -y"
 
-RUN $yuminst install bash bc binutils bzip2 cpio g++ gcc git gzip ncurses-devel ncurses-libs \
-    make mercurial perl-ExtUtils-MakeMaker patch python rsync sed tar unzip wget yum-plugin-security
+RUN $yuminst install yum-plugin-security
+RUN $yuminst install bc bzip2 g++ gcc git ncurses-devel \
+    mercurial perl-ExtUtils-MakeMaker patch rsync tar unzip wget 
 RUN $yuminst update-minimal --security -y
     
-RUN locale-gen en_US.utf8
+#RUN locale-gen en_US.utf8
 
 WORKDIR /root
 RUN git clone git://git.buildroot.net/buildroot -b 2015.11.x --depth=1
