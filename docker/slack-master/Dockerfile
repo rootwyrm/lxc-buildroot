@@ -1,4 +1,4 @@
-FROM: vbatts/slackware:latest
+FROM  vbatts/slackware:latest
 ## The magic begins...
 MAINTAINER    Phillip "RootWyrm" Jaenke <docker@rootwyrm.com>
 
