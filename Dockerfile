@@ -1,3 +1,4 @@
+FROM  centos:6
 ## The magic begins...
 MAINTAINER    Phillip "RootWyrm" Jaenke <docker@rootwyrm.com>
 
@@ -16,7 +17,6 @@ LABEL com.rootwyrm.rootcore.ports="22"
 LABEL com.rootwyrm.rootcore.qnap_compatible="false"
 LABEL com.rootwyrm.rootcore.synology_compatible="false"
 
-FROM  centos:6
 
 ENV yuminst="/bin/yum -q -y"
 
