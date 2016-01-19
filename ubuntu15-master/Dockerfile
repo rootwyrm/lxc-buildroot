@@ -38,7 +38,7 @@ WORKDIR /root/buildroot
 RUN echo "30 6 * * 0,2,4 root /usr/bin/apt-get update -qq" >> /etc/crontab
 RUN echo "# Comment to disable weekly repository updates." >> /etc/crontab
 RUN echo "0 9 * * 0 root cd /root/buildroot ; /bin/git pull" >> /etc/crontab
-ADD etc/logrotate.d/ /etc/logrotate.d/
+#ADD etc/logrotate.d/ /etc/logrotate.d/
 
 RUN touch .config
 RUN touch kernel.config
