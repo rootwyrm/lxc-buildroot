@@ -18,7 +18,7 @@ LABEL com.rootwyrm.rootcore.synology_compatible="false"
 
 FROM  centos:6
 
-ENV yuminst="/bin/yum -y"
+ENV yuminst="/bin/yum -q -y"
 
 RUN $yuminst bash bc binutils bzip2 cpio g++ gcc git gzip ncurses-devel ncurses-libs \
     make mercurial perl-ExtUtils-MakeMaker patch python rsync sed tar unzip wget
