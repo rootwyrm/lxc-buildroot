@@ -28,11 +28,11 @@ RUN $yuminst update
 
 ## Now make sure we update yum regularly, just in case...
 RUN echo "30 6 * * 0,2,4 root /usr/bin/yum -q -y update >> /var/log/yum_update.log" >> /etc/crontab
-RUN echo "/var/log/yum_update.log { \
-    missingok \
-    weekly \
-    create 0600 root root \
-    rotate 1 \
+RUN echo "/var/log/yum_update.log { 
+    missingok 
+    weekly 
+    create 0600 root root 
+    rotate 1 
 }" >> /etc/logrotate.d/yum_update
     
 #RUN locale-gen en_US.utf8
