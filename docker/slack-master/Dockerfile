@@ -21,7 +21,7 @@ LABEL com.rootwyrm.rootcore.synology_compatible="false"
 ENV BATCH=y DEFAULT_ANSWER=y
 
 RUN rm /etc/slackpkg/mirrors
-ADD ../etc/slackpkg/mirrors /etc/slackpkg/mirrors
+ADD ../../etc/slackpkg/mirrors /etc/slackpkg/mirrors
 RUN slackpkg update gpg && slackpkg update
 RUN slackpkg install wget
 WORKDIR /root
