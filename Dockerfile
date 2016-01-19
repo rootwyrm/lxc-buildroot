@@ -35,7 +35,7 @@ ADD etc/logrotate.d/ /etc/logrotate.d/
 #RUN locale-gen en_US.utf8
 
 WORKDIR /root
-RUN git clone git://git.buildroot.net/buildroot -b 2015.11.x --depth=1
+RUN git clone git://git.buildroot.net/buildroot -b master --depth=1
 WORKDIR /root/buildroot
 
 RUN touch .config
