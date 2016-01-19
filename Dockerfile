@@ -21,9 +21,19 @@ LABEL com.rootwyrm.rootcore.synology_compatible="false"
 ENV yuminst="/usr/bin/yum -q -y"
 
 RUN $yuminst install yum-plugin-security
-RUN $yuminst install bc bzip2 g++ gcc git ncurses-devel \
-    mercurial perl-ExtUtils-MakeMaker patch rsync tar unzip wget 
-RUN $yuminst update-minimal --security -y
+RUN $yuminst install bc bzip2 g++ gcc git ncurses-devel crontabs \
+    mercurial perl-ExtUtils-MakeMaker patch rsync tar unzip wget
+RUN $yuminst update-minimal --security
+RUN $yuminst update
+
+## Now make sure we update yum regularly, just in case...
+RUN echo "30 6 * * 0,2,4 root /usr/bin/yum -q -y update >> /var/log/yum_update.log" >> /etc/crontab
+RUN echo "/var/log/yum_update.log { \
+    missingok \
+    weekly \
+    create 0600 root root \
+    rotate 1 \
+}" >> /etc/logrotate.d/yum_update
     
 #RUN locale-gen en_US.utf8
 
