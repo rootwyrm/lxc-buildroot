@@ -30,7 +30,7 @@ RUN $yuminst update
 ## Now make sure we update yum regularly, just in case...
 RUN echo "30 6 * * 0,2,4 root /usr/bin/yum -q -y update >> /var/log/yum_update.log" >> /etc/crontab
 RUN echo "# Comment to disable weekly repository updates." >> /etc/crontab
-RUN echo "000000000 9 * * 0 root cd /root/buildroot ; /bin/git pull" >> /etc/crontab
+RUN echo "0 9 * * 0 root cd /root/buildroot ; /bin/git pull" >> /etc/crontab
 ADD etc/logrotate.d/ /etc/logrotate.d/
     
 #RUN locale-gen en_US.utf8
