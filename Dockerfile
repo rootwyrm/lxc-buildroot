@@ -23,8 +23,7 @@ ENV yuminst="/usr/bin/yum -q -y"
 RUN $yuminst install yum-plugin-security
 RUN $yuminst install bc bzip2 gcc gcc-c++ flex git ncurses-devel crontabs \
     mercurial perl-ExtUtils-MakeMaker patch rsync tar unzip wget bison \
-    which 
-RUN $yuminst update-minimal --security
+    which make perl-Data-Dumper perl-Thread-Queue
 RUN $yuminst update
 
 ## Now make sure we update yum regularly, just in case...
