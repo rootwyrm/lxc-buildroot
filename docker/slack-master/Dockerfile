@@ -21,7 +21,7 @@ LABEL com.rootwyrm.rootcore.synology_compatible="false"
 ENV BATCH=y DEFAULT_ANSWER=y
 
 RUN rm /etc/slackpkg/mirrors
-ADD /etc/slackpkg/mirrors /etc/slackpkg/mirrors
+ADD etc/slackpkg/mirrors /etc/slackpkg/mirrors
 RUN slackpkg update gpg && slackpkg update
 RUN slackpkg install wget
 WORKDIR /root
@@ -50,7 +50,7 @@ RUN touch kernel.config
 RUN echo "30 6 * * 0,2,4 root /usr/sbin/slackpkg -batch=on -default_answer=n update" >> /etc/crontab
 RUN echo "# Comment to disable weekly repository updates." >> /etc/crontab
 RUN echo "0 9 * * 0 root cd /root/buildroot ; /bin/git pull" >> /etc/crontab
-ADD /etc/logrotate.d/ /etc/logrotate.d/
+#ADD /etc/logrotate.d/ /etc/logrotate.d/
 
 VOLUME /root/buildroot/dl
 VOLUME /buildroot_output
