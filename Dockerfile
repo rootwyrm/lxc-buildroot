@@ -18,7 +18,7 @@ LABEL com.rootwyrm.rootcore.qnap_compatible="false"
 LABEL com.rootwyrm.rootcore.synology_compatible="false"
 
 
-ENV yuminst="/bin/yum -q -y"
+ENV yuminst="/usr/bin/yum -q -y"
 
 RUN $yuminst bash bc binutils bzip2 cpio g++ gcc git gzip ncurses-devel ncurses-libs \
     make mercurial perl-ExtUtils-MakeMaker patch python rsync sed tar unzip wget
