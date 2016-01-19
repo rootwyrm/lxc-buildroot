@@ -31,7 +31,7 @@ RUN apt-get update && \
 RUN locale-gen en_US.utf8
 
 WORKDIR /root
-RUN git clone git://git.buildroot.net/buildroot -b 2015.11.x --depth=1
+RUN git clone git://git.buildroot.net/buildroot --depth=1
 WORKDIR /root/buildroot
 
 ## Ubuntu has a daily apt check, we still need to run the update
