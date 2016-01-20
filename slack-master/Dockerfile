@@ -31,9 +31,9 @@ RUN /sbin/installpkg --terse --md5sum slackpkg+*.t?z
 ## Have to rerun update due to slackpkg+ extension
 RUN slackpkg update gpg && slackpkg update
 RUN slackpkg install -batch=on -default_answer=y \
-  bc-* binutils-* bzip2-* cpio gcc-4* "gcc-g++* "git-* gzip-* ncurses-5* make-* \
-  gccmakedep-* makedepend-* mercurial whois patch-* perl-* python-2.7* \
-  rsync sed-* infozip logrotate
+  bc-* binutils-* bzip2-* cpio gcc-4* "gcc-g++* "git-* gzip-* ncurses-5* \
+  make-* gccmakedep-* makedepend-* mercurial whois patch-* perl-5* \
+  python-2.7* rsync sed-* infozip logrotate
 ## Clean up because I don't like messes.
 RUN rm /root/slackpkg*
 ## ssh install done separate if we need to remove
